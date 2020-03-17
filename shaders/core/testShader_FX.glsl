@@ -1,7 +1,7 @@
 #version 450
 #pragma asShaderType Gui2D
 
-#include "../lib/standardlib.glinc"
+#include "../lib/standardlib.glsl"
 
 layout(binding = 0) uniform 
 AS_REFLECT_BEGIN(Model)

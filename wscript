@@ -107,7 +107,7 @@ def build(ctx):
 	ctx.set_group('BuildAssets')
 	
 	#For each GLSL file
-	for file in ctx.path.ant_glob('**/*.glsl'):
+	for file in ctx.path.ant_glob('**/*_FX.glsl'):
 		fileName = file.relpath()
 		outFile = ctx.path.find_or_declare(fileName.replace('glsl', 'asfx'))
 		outFiles.append(outFile)
