@@ -1,0 +1,2 @@
+python waf clean
+pause

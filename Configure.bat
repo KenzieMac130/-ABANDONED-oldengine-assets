@@ -1,0 +1,2 @@
+python waf configure
+pause
