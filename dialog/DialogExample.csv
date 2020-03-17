@@ -1,0 +1,5 @@
+TEXT ID,CHARACTER,ENGLISH,NOTES
+Fallback,Unknown,(Missing Line),….
+Personson:Yelljump,Personson,"JUMP!!! THE BRIDGE IS ABOUT TO FALL, this is not good!",scene where bridge falls
+Personson:Thatwasclose,Personson,"That was close, you almost took a nasty fall””",
+Personson:Line2,Personson,This is line 2 {EFFECT:WAVE}Uwaaaah press the {SYMBOL:JUMP}{/EFFECT},
