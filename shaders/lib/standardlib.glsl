@@ -1,3 +1,3 @@
+#include "engineConstants.glsl"
+#include "engineInputs.glsl"
 #include "asReflect.glsl"
-#include "normalMapping.glsl"
-#include "snippetStructs.glsl"
