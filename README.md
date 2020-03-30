@@ -1,4 +1,4 @@
-# assets
+# astrengine-assets
  Default assets for astrengine
  https://github.com/astrand130/astrengine
 
