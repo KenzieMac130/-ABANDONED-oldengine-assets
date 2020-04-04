@@ -13,4 +13,6 @@ layout(binding = AS_BINDING_VIEWPORT_UBO) uniform AsViewport{
 	float height;
 } asViewport;
 
+layout(set = AS_DESCSET_TEXTURE_POOL, binding = AS_BINDING_TEXTURE_POOL) uniform sampler2D AsBindlessTextures[AS_MAX_POOLED_TEXTURES];
+
 #endif 
