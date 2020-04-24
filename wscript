@@ -7,11 +7,24 @@ from waflib.Task import Task
 top = '.'
 out = '../build/resources'
 
+
+
 #Compile Shaders Task
 class CompileShader(Task):
 
 	def run(self):
-		return self.exec_command('"%s" "%s" "%s" SPIR-V' % (self.env['SHADER_COMPILER'][0], self.inputs[0].abspath(), self.outputs[0].abspath()))
+		#Get Defines
+		reflectData = ''
+		for node in self.inputs:
+			contents = node.read()
+			if("#pragma asIgnoreMacroParser" not in contents):
+				for macro in re.finditer(r'AS_REFLECT_(.*\))', contents):
+					reflectData += macro.group(1) + ';'
+		#Because the pain of passing '"' replace in tool
+		reflectData = reflectData.replace('"', '@')
+		
+		#Run Command
+		return self.exec_command('"%s" "%s" "%s" SPIR-V "%s"' % (self.env['SHADER_COMPILER'][0], self.inputs[0].abspath(), self.outputs[0].abspath(), reflectData))
 		
 	def findGlslIncludes(self, node, levels):
 		nodes = []
@@ -28,11 +41,11 @@ class CompileShader(Task):
 			nodes.append(includeNode)
 			nodes += self.findGlslIncludes(includeNode, levels+1)
 		
-		nodes.append(node) #Append Self
 		return nodes
 		
 	def scan(self):
-		return (self.findGlslIncludes(self.inputs[0], 0), time.time())
+		self.set_inputs(self.findGlslIncludes(self.inputs[0], 0))
+		return (self.inputs, time.time())
 		
 	def runnable_status(self):
 		ret = super(CompileShader, self).runnable_status()
