@@ -16,7 +16,6 @@ void main(){
 
 #ifdef AS_STAGE_FRAGMENT
 AS_STANDARD_SCENE_SHADER_INPUTS()
-
 AS_STANDARD_VERTEX_RASTER_IO(in)
 
 layout(location = 0) out vec4 fragColor;

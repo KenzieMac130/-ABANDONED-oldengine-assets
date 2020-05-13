@@ -26,7 +26,7 @@ if(DBG == 0)\
 else if(DBG == 1)\
 	RETURN = vec4(inVtxNormal.xyz * 0.5 + vec3(0.5), 1.0);\
 else if(DBG == 2)\
-	RETURN = vec4(inVtxTangent.xyz, 1.0);\
+	RETURN = vec4(inVtxTangent.xyz * 0.5 + vec3(0.5), 1.0);\
 else if(DBG == 3)\
 	RETURN = vec4(inVtxTangent.www, 1.0);\
 else if(DBG == 4)\
