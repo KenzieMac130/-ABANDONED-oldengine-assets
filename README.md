@@ -1,7 +1,3 @@
-# astrengine-assets
- Default assets for astrengine
- https://github.com/astrand130/astrengine
- 
 ## License Info
 * Default Shaders, Scripts, and the Build Script ("wscript") fall under astrengine's Apache 2.0 Lisense as Described [Here](https://raw.githubusercontent.com/astrand130/astrengine/master/LICENSE)
 * Snippets in Shaders and Scripts may come from outside sources (such as example code), if that is the case then the snippet must be credited with a source, these snippets will respect the original source's license and MUST be credited in astrengine's [OpenSourceCredits.txt](https://raw.githubusercontent.com/astrand130/astrengine/master/source/thirdparty/OpenSourceCredits.txt) file.
